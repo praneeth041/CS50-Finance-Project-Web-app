@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped",  style = "text-align : left">
+        <thead>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Transacted</th>
+        </thead>
+        <tbody>
+            {% for hist in history %}
+            <tr>
+                <td>{{hist["Symbol"]}}</td>
+                <td>{{hist["Shares"]}}</td>
+                <td>{{hist["Price"]}}</td>
+                <td>{{hist["Transacted"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
